@@ -2,7 +2,7 @@
 
 A simple Python script that organizes files in your **Downloads** folder into subfolders based on file extensions.  
 Written by **Mustafa Yousry**.  
-This project is licensed under the **[MIT License](LICENSE)**.
+
 
 ---
 
