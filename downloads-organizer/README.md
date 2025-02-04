@@ -16,17 +16,19 @@ Written by **Mustafa Yousry**.
 
 ## How It Works
 
-1. Scans all files in your default **Downloads** directory.
-2. Checks each file's extension and **moves** the file to a corresponding subfolder:
-   - **Images** (`.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.svg`)
-   - **Documents** (`.pdf`, `.doc`, `.docx`, `.txt`, `.xls`, `.xlsx`, `.ppt`, `.pptx`)
-   - **Videos** (`.mp4`, `.mkv`, `.avi`, `.mov`)
-   - **Music** (`.mp3`, `.wav`, `.aac`, `.flac`)
-   - **Archives** (`.zip`, `.rar`, `.tar`, `.gz`, `.7z`)
-   - **Executables** (`.exe`, `.msi`, `.app`, `.apk`)
-   - **Others** (for any extensions not listed above)
-3. If the corresponding subfolder does not exist, it automatically **creates** it.
-4. Prints a message for each file it moves.
+1. Scans **all files** in your default **Downloads** directory.
+2. Determines each file’s **extension** and **moves** it to a matching subfolder:
+   - **Images**: (`.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.svg`, etc.)
+   - **Documents**: (`.pdf`, `.doc`, `.docx`, `.txt`, `.xls`, `.xlsx`, `.ppt`, `.pptx`, etc.)
+   - **Videos**: (`.mp4`, `.mkv`, `.avi`, `.mov`, etc.)
+   - **Audio**: (`.mp3`, `.wav`, `.aac`, `.flac`, etc.)
+   - **Archives**: (`.zip`, `.rar`, `.tar`, `.gz`, `.7z`, etc.)
+   - **3D/CAD/Design**: (`.obj`, `.fbx`, `.stl`, `.dwg`, `.psd`, `.ai`, etc.)
+   - **Web & Scripts**: (`.html`, `.css`, `.js`, `.php`, `.py`, etc.)
+   - **Programs**: (`.exe`, `.msi`, `.dmg`, `.pkg`, `.apk`, etc.)
+   - **Others**: Any extensions not covered above
+3. **Creates** the corresponding subfolder automatically if it does not already exist.
+4. **Prints** a message for each file it moves, and displays a **success banner** when finished.
 
 ---
 

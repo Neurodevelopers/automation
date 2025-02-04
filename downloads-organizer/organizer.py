@@ -3,16 +3,95 @@ import shutil
 from pathlib import Path
 
 # Map file extensions to folder names
-# Feel free to customize these
+# Customize these as needed
 EXTENSION_MAP = {
-    "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg"],
-    "Documents": [".pdf", ".doc", ".docx", ".txt", ".xls", ".xlsx", ".ppt", ".pptx"],
-    "Videos": [".mp4", ".mkv", ".avi", ".mov"],
-    "Music": [".mp3", ".wav", ".aac", ".flac"],
-    "Archives": [".zip", ".rar", ".tar", ".gz", ".7z"],
-    "Executables": [".exe", ".msi", ".app", ".apk"],
-    # Add or remove categories as needed
+    # IMAGES & RAW PHOTOS
+    "Images": [
+        ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".tif", ".tiff", 
+        ".ico", ".webp"
+    ],
+    # RAW camera files (optional, or merge into "Images")
+    "CameraRaw": [
+        ".raw", ".cr2", ".cr3", ".nef", ".orf", ".raf", ".arw", ".dng"
+    ],
+
+    # DOCUMENTS, EBOOKS, SPREADSHEETS, PRESENTATIONS
+    "Documents": [
+        ".pdf", ".doc", ".docx", ".rtf", ".odt", ".txt", ".wpd", ".tex",
+        ".md", ".pages"  # you can add more (like .docm if you wish)
+    ],
+    "Ebooks": [
+        ".epub", ".mobi", ".azw", ".azw3", ".ibooks", ".fb2"
+    ],
+    "Spreadsheets": [
+        ".xls", ".xlsx", ".xlsm", ".xlsb", ".ods", ".csv"
+    ],
+    "Presentations": [
+        ".ppt", ".pptx", ".pps", ".ppsx", ".key", ".odp"
+    ],
+
+    # AUDIO & VIDEO
+    "Audio": [
+        ".mp3", ".wav", ".aac", ".flac", ".ogg", ".oga", ".wma", ".m4a", ".alac"
+    ],
+    "Videos": [
+        ".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".mpeg", ".mpg"
+    ],
+
+    # 3D, CAD, DESIGN, FONTS
+    "3D": [
+        ".obj", ".fbx", ".stl", ".blend", ".3ds", ".dae", ".gltf", ".glb"
+    ],
+    "CAD": [
+        ".dwg", ".dxf", ".dwf"
+    ],
+    "Design": [
+        ".psd", ".ai", ".eps", ".xd", ".fig", ".sketch"
+    ],
+    "Fonts": [
+        ".ttf", ".otf", ".woff", ".woff2", ".fnt"
+    ],
+
+    # WEB & SCRIPTS
+    "Web": [
+        ".html", ".htm", ".css", ".js", ".ts", ".jsx", ".vue",
+        ".php", ".aspx", ".asp", ".jsp", ".json", ".xml"
+    ],
+    "Scripts": [
+        ".py", ".sh", ".bat", ".ps1", ".rb", ".pl", ".cmd"
+    ],
+
+    # PROGRAMS / EXECUTABLES
+    "Programs": [
+        ".exe", ".msi", ".dmg", ".pkg", ".app", ".apk", 
+        ".deb", ".rpm", ".bin", ".run"
+    ],
+
+    # ARCHIVES & DISC IMAGES
+    "Archives": [
+        ".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz", ".lzma", ".tgz"
+    ],
+    "DiscImages": [
+        ".iso", ".img", ".nrg", ".cue", ".bin"
+    ],
+
+    # DATABASE & VIRTUAL MACHINES (OPTIONAL)
+    "Database": [
+        ".sql", ".db", ".mdb", ".accdb", ".dbf", ".sqlite"
+    ],
+    "VirtualMachines": [
+        ".vdi", ".vmdk", ".vhd", ".vhdx", ".ova", ".ovf"
+    ],
+
+    # SYSTEM FILES (OPTIONAL) - you may not want to move these often
+    "SystemFiles": [
+        ".dll", ".sys", ".drv", ".cpl", ".lnk"
+    ],
+
+    # CATCH-ALL FOR ANYTHING NOT MATCHED
+    "Others": []
 }
+
 
 # Adjust this path if your Downloads folder is in a different location
 DOWNLOADS_FOLDER = Path.home() / "Downloads"
@@ -47,4 +126,19 @@ def organize_downloads(download_folder: Path = DOWNLOADS_FOLDER):
                 print(f"Moved {item.name} to {others_folder}")
 
 if __name__ == "__main__":
+    # Run the organizer
     organize_downloads()
+
+    # Print a fancy ASCII banner when done
+    print(r"""
+
+    ███╗   ██╗███████╗██╗   ██╗██████╗  ██████╗ 
+    ████╗  ██║██╔════╝██║   ██║██╔══██╗██╔═══██╗
+    ██╔██╗ ██║█████╗  ██║   ██║██████╔╝██║   ██║
+    ██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗██║   ██║
+    ██║ ╚████║███████╗╚██████╔╝██║  ██║╚██████╔╝
+    ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ 
+        ~ Files Organized Successfully ~
+            by Mustafa Yousry
+    """)
+
